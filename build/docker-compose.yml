@@ -1,0 +1,21 @@
+version: '2'
+
+services:
+
+        project-starter:
+                build: .
+                expose:
+                        - "8090"
+                ports:
+                        - "8090:80"
+                container_name: project-starter
+                volumes:
+                        - ../.:/var/www/html/
+                links:
+                        - mysql-project-starter
+        mysql-project-starter:
+                image: mysql:5.7
+                container_name: mysql-project-starter
+                environment:
+                        MYSQL_ROOT_PASSWORD: project-starter
+                        MYSQL_DATABASE: project-starter

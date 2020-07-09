@@ -1,0 +1,13 @@
+.colorpicker.dropdown-menu {
+	z-index: 999999999999999999999;
+}
+@media only screen and (max-width: 1024px) {
+	.page-title {
+		margin-top: 20px !important;
+	}
+}
+@media (min-width: 768px) {
+	.form-horizontal .control-label {
+	    text-align: left !important;
+	}
+}
