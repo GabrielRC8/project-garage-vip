@@ -89,6 +89,7 @@ Route::group(['middleware' => 'web'], function () {
 
     //Clientes
     Route::get      ('/customer', [ 'as' => 'customer.index',  'uses' => 'CustomerController@index' ]);
+    Route::post      ('/customer/store', [ 'as' => 'customer.store',  'uses' => 'CustomerController@store' ]);
 
     
 });

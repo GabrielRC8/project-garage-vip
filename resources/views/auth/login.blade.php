@@ -2,11 +2,14 @@
 
 @section('content')
 
+
     <div class="login-container">
-        
         <div class="login-box animated fadeInDown">
+            <img class="mb-4" src="{{ URL::asset('img/garagemvip.jpeg')}}" alt="0" width="200" height="200">
             <div><h1 style="color:white; text-align:center">{{ ENV('APP_NAME') }}</h1></div>
+            
             <div class="login-body">
+                
                 <div class="login-title"><strong>Bem vindo</strong>, faça seu login</div>
 
                     {!! Form::open([
