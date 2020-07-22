@@ -14,12 +14,15 @@ class CreateCustomersTable extends Migration
     {
         Schema::create('customers', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name', 40);
-            $table->integer('cpf', 20); // ou cnpj.
+            $table->string('name')->length(40);
+            $table->integer('cpf')->length(20); // ou cnpj.
+            $table->string('street')->length(50);
+            $table->integer('number')->length(10);
+            $table->integer('zipcode')->length(10);
+            $table->integer('fone')->length(11);
+            $table->integer('fone_2')->length(11)->nullable();
             $table->tinyInteger('status');
             $table->timestamps();
-
-         
         });
     }
 

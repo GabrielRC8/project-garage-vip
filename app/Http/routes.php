@@ -30,8 +30,8 @@ Route::group(['middleware' => 'web'], function () {
 
 
     // Registration
-    //Route::get      ('/register', [ 'as' => 'auth.showRegistrationForm',  'uses' => 'Auth\AuthController@showRegistrationForm' ]);
-    //Route::post     ('/register', [ 'as' => 'auth.register',              'uses' => 'Auth\AuthController@register'             ]);
+    Route::get      ('/register', [ 'as' => 'auth.showRegistrationForm',  'uses' => 'Auth\AuthController@showRegistrationForm' ]);
+    Route::post     ('/register', [ 'as' => 'auth.register',              'uses' => 'Auth\AuthController@register'             ]);
 
 
     // Password Reset Routes
@@ -88,8 +88,10 @@ Route::group(['middleware' => 'web'], function () {
 
 
     //Clientes
-    Route::get      ('/customer', [ 'as' => 'customer.index',  'uses' => 'CustomerController@index' ]);
-    Route::post      ('/customer/store', [ 'as' => 'customer.store',  'uses' => 'CustomerController@store' ]);
+    Route::get      ('/customer',           [ 'as' => 'customer.index',     'uses' => 'CustomerController@index'    ]);
+    Route::post     ('/customer/store',     [ 'as' => 'customer.store',     'uses' => 'CustomerController@store'    ]);
+    Route::post     ('/customer/search',    [ 'as' => 'customer.search',    'uses' => 'CustomerController@search'   ]);
+    
 
     
 });

@@ -33,7 +33,7 @@
                 
                 <div class="row">
 
-                    <div class="col-md-12">
+                    <div class="col-md-12">     
                     
                         <div class="panel panel-default">
                             <div class="panel-body">
@@ -44,9 +44,10 @@
                                     'route' => 'customer.store',
                                     'class' => 'form-horizontal'
                                 ]) !!}
-        
+                                
+                                    
                                     <div class="form-group">
-                                        {!! Form::label('name', 'Nome:', ['class' => 'col-sm-1 control-label']) !!}
+                                        {!! Form::label('name', 'Nome:', ['class' => 'col-sm-1 control-label',]) !!}
         
                                         <div class="col-md-9">
                                             {!! Form::text('name', null, ['class' => 'form-control']) !!}
@@ -130,50 +131,7 @@
                                             @endif
                                         </div>
                                     </div>
-                                    <div class="form-group">
-
-                                        <h3 class="fa-add">Veículo</h3>
-
-                                        {!! Form::label('assembler', 'Montadora:', ['class' => 'col-sm-1 control-label'])!!}
-        
-                                        <div class="col-md-2">
-                                            {!! Form::text('assemler', null, ['class' => 'form-control']) !!}
-        
-                                            @if($errors->has('assembler'))
-                                                <label class="error">
-                                                    {!! $errors->first('assembler') !!}
-                                                </label>
-                                            @endif
-                                        </div>
-
-                                        {!! Form::label('model', 'Modelo:', ['class' => 'col-sm-1 control-label'])!!}
-        
-                                        <div class="col-md-2">
-                                            {!! Form::text('model', null, ['class' => 'form-control']) !!}
-        
-                                            @if($errors->has('model'))
-                                                <label class="error">
-                                                    {!! $errors->first('model') !!}
-                                                </label>
-                                            @endif
-                                        </div>
-
-
-
-                                        {!! Form::label('board', 'Placa:', ['class' => 'col-sm-1 control-label']) !!}
-        
-                                        <div class="col-md-2">
-                                            {!! Form::text('board', null, ['class' => 'form-control']) !!}
-        
-                                            @if($errors->has('board'))
-                                                <label class="error">
-                                                    {!! $errors->first('board') !!}
-                                                </label>
-                                            @endif
-                                        </div>
-
-                                    </div>
-
+                                   
                                     <div class="form-group">
                                         {!! Form::label('status', 'Status:', ['class' => 'col-sm-1 control-label']) !!}
         
@@ -199,19 +157,20 @@
                         </div>
 
 
-                        <!-- Painel de busca /listagem clientes -->
+                        <!-- Painel de busca clientes -->
 
                         <div class="panel panel-default">
                             <div class="panel-body">
+                                
                                 <h3>Buscar de Clientes</h3>
         
                                 {!! Form::open([
-                                    'route' => 'group.store',
+                                    'route' => 'customer.search',
                                     'class' => 'form-horizontal'
                                 ]) !!}
         
                                     <div class="form-group">
-                                        {!! Form::label('cpf', 'CPF/CNPJ:', ['class' => 'col-sm-3 control-label']) !!}
+                                        {!! Form::label('cpf', 'CPF/CNPJ:', ['class' => 'col-sm-1 control-label']) !!}
         
                                         <div class="col-md-3">
                                             {!! Form::text('cpf', null, ['class' => 'form-control']) !!}
@@ -226,7 +185,6 @@
         
                                             
                                     <div class="btn-group">
-                                        <a href="{{ route('group.index') }}">
                                         {!! Form::submit('Buscar', ['class' => 'btn btn-primary']) !!}
                                     </div>
         
@@ -236,6 +194,7 @@
 
                 
                         </div>
+
                     </div>
         
                 </div>
